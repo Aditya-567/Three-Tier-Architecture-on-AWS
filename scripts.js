@@ -15,18 +15,15 @@ $.ajax({
     type: 'POST',
     data: JSON.stringify(inputData),
     contentType: 'application/json; charset=utf-8',
-    headers: {
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-    },
     success: function (response) {
-        document.getElementById("profileSaved").innerHTML = "Profile Saved!";
+      document.getElementById("profileSaved").innerHTML = "Profile Saved!";
     },
-    error: function (xhr) {
-        console.error("Error saving profile:", xhr.responseText);
-        alert("Error saving profile: " + xhr.statusText);
+    error: function (error) {
+      console.error("Error saving profile:", error);
+      alert("Error saving profile. Please try again.");
     }
-});
+  });
+};
 
 
 // AJAX GET REQUEST
