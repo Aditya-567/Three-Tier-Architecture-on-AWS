@@ -1,5 +1,5 @@
 // Add your API endpoint here below
-var API_ENDPOINT = "https://9s4i2v769c.execute-api.ap-south-1.amazonaws.com/hehe-api";
+var API_ENDPOINT = "https://ud2927hzif.execute-api.ap-south-1.amazonaws.com/api";
 
 // AJAX POST REQUEST
 document.getElementById("saveprofile").onclick = function () {
