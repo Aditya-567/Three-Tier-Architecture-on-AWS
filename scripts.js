@@ -10,20 +10,24 @@ document.getElementById("saveprofile").onclick = function () {
     "empAge": $('#empage').val()
   };
 
-  $.ajax({
+$.ajax({
     url: API_ENDPOINT,
     type: 'POST',
     data: JSON.stringify(inputData),
     contentType: 'application/json; charset=utf-8',
-    success: function (response) {
-      document.getElementById("profileSaved").innerHTML = "Profile Saved!";
+    headers: {
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
-    error: function (error) {
-      console.error("Error saving profile:", error);
-      alert("Error saving profile. Please try again.");
+    success: function (response) {
+        document.getElementById("profileSaved").innerHTML = "Profile Saved!";
+    },
+    error: function (xhr) {
+        console.error("Error saving profile:", xhr.responseText);
+        alert("Error saving profile: " + xhr.statusText);
     }
-  });
-};
+});
+
 
 // AJAX GET REQUEST
 document.getElementById("getprofile").onclick = function () {
